@@ -1,0 +1,68 @@
+<section>
+	<div class="center-align">
+		<div class="section"></div>
+		<div class="section"></div>
+
+		<h5 class="teal-text">Realize o LOGIN para acessar</h5>
+		<div class="section"></div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col s2"></div>
+
+				<div class="col s8">
+					<form method="post" name="frmLogin">
+						<div class="row">
+							<div class="input-field col s12">
+								<i class="material-icons prefix">person</i> <input type="text"
+									name="nome" id="nome" ng-model="cliente.nome"
+									required="required" autofocus="autofocus" /> <label for="nome">Insira
+									seu nome</label>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="input-field col s12">
+								<i class="material-icons prefix">lock</i> <input type="password"
+									name="senha" id="senha" ng-model="cliente.senha"
+									required="required" /> <label for="senha">Insira sua
+									senha</label>
+							</div>
+						</div>
+
+						<br />
+
+						<div class="row center-align">
+							<a ng-click="login()"
+								class="col s12 btn btn-large waves-effect teal">ACESSAR</a>
+						</div>
+					</form>
+				</div>
+
+				<div class="col s2"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div id="modal2" class="modal">
+	<div class="modal-content">
+		<h4>Simple JWT diz:</h4>
+		<p class="flow-text">Preencha todos os campos para continuar!</p>
+	</div>
+	<div class="modal-footer">
+		<a onclick="hideAlert(modal2)"
+			class=" modal-action modal-close waves-effect waves-teal btn-flat teal-text">OK</a>
+	</div>
+</div>
+
+<div id="modal3" class="modal">
+	<div class="modal-content">
+		<h4>Simple JWT diz:</h4>
+		<p class="flow-text">Nome ou senha inválidos!</p>
+	</div>
+	<div class="modal-footer">
+		<a onclick="hideAlert(modal3); setFocus('frmLogin', 'nome')"
+			class=" modal-action modal-close waves-effect waves-teal btn-flat teal-text">OK</a>
+	</div>
+</div>

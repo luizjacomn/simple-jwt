@@ -1,0 +1,62 @@
+<nav>
+	<div class="nav-wrapper teal lighten-2">
+		<span style="margin-left: 10px"></span> <a href="#" class="brand-logo">Simple
+			JWT</a>
+		<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<li><a href="https://jwt.io/" target="_blank">JWT</a></li>
+			<li><a href="https://angularjs.org/" target="_blank">Angular
+					JS</a></li>
+			<li><a href="http://materializecss.com/" target="_blank">Materialize
+					CSS</a></li>
+			<li><a onclick="logout()"><i class="material-icons left">launch</i>Sair</a></li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container">
+	<div class="row">
+		<form class="col s12" name="frmCadastro">
+			<div class="row">
+				<h3>Cadastro</h3>
+				<div class="input-field col s12 m6 l3">
+					<input id="nome" type="text" name="txtNome" ng-model="cliente.nome"
+						required="required" /> <label for="nome">Nome</label>
+				</div>
+
+				<div class="input-field col s12 m6 l3">
+					<input id="password" type="password" name="txtSenha"
+						ng-model="cliente.senha" required="required" /> <label
+						for="password">Senha</label>
+				</div>
+				<a class="waves-effect waves-light btn" ng-click="saveCliente()"><i
+					class="material-icons left">person_add</i>CADASTRAR</a>
+			</div>
+		</form>
+	</div>
+
+	<div class="row" ng-hide="clientes.length == 0">
+		<div class="col s12">
+			<ul class="collection with-header">
+				<li class="collection-header">
+					<h5>
+						<i class="material-icons left">people</i>Clientes
+					</h5>
+				</li>
+				<li class="collection-item" ng-repeat="cli in clientes">
+					<div>{{cli.nome}}</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="modal1" class="modal">
+	<div class="modal-content">
+		<h4>Simple JWT diz:</h4>
+		<p class="flow-text">Preencha todos os campos para continuar!</p>
+	</div>
+	<div class="modal-footer">
+		<a onclick="hideAlert(modal1)"
+			class=" modal-action modal-close waves-effect waves-teal btn-flat teal-text">OK</a>
+	</div>
+</div>
