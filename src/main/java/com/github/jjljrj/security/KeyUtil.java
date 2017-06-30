@@ -1,5 +1,5 @@
 package com.github.jjljrj.security;
 
 public class KeyUtil {
-	public static final String KEY = "teste";
+	public static final String KEY = "horacio";
 }

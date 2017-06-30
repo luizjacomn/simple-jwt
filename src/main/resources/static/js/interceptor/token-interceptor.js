@@ -6,7 +6,7 @@ app.factory("tokenInterceptor", function($q, $location) {
 	      return config;
 	    },
 	    'responseError': function(rejection) {
-	    	if(rejection.status == 401 || rejection.status == 404) {
+	    	if(rejection.status == 401) {
 	    		$location.path("/login");
 	    	}
 	    	return response;
